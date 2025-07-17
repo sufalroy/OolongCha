@@ -1,0 +1,58 @@
+[build-system]
+requires = ["setuptools>=45", "wheel", "setuptools_scm>=6.2"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "oolongcha"
+dynamic = ["version"]
+description = "A bad conversational AI agent"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {file = "LICENSE"}
+authors = [
+    {name = "Sufal Roy", email = "sufalroy1997@gmail.com"}
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+
+dependencies = [
+    "numpy>=2.0.0,
+    "torch>=1.8.0",
+    "torchaudio>=1.8.0",
+    "torchvision>=0.9.0",
+    "psutil",
+    "tensorrt>=8.6.0",
+    "openai-whisper==20240927",
+    "langchain-community",
+    "langchain-core",
+    "langchain-text-splitters",
+    "langchain-huggingface",
+    "langchain-ollama",
+    "pydantic",
+    "langgraph",
+    "librosa",
+    "onnxruntime",
+    "onnx-graphsurgeon",
+    "kokoro-onnx>=0.4.2",
+    "sounddevice>=0.4.6",
+
+]
+
+[project.urls]
+Repository = ""
+
+[project.scripts]
+oolongcha = "oolongcha.app:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["oolongcha*"]
